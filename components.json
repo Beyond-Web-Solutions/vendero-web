@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "zinc",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@scani/components",
+    "utils": "@scani/lib/utils",
+    "ui": "@scani/components/ui",
+    "lib": "@scani/lib",
+    "hooks": "@scani/hooks"
+  },
+  "iconLibrary": "lucide"
+}
