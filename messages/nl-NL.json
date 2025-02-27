@@ -1,1 +1,42 @@
-{}
+{
+  "common": {
+    "app-name": "Scani"
+  },
+  "coming-soon": {
+    "title": "Binnenkort beschikbaar",
+    "description": "Scani is momenteel in ontwikkeling.",
+    "cta": "Inloggen"
+  },
+  "auth": {
+    "sign-in": {
+      "title": "Welkom terug",
+      "description": "Log in met je email en wachtwoord.",
+      "form": {},
+      "links": {
+        "prefix": "Nog geen account?",
+        "cta": "Registreer"
+      }
+    },
+    "sign-up": {
+      "title": "Wekom",
+      "description": "Maak een account aan met je email en wachtwoord.",
+
+      "form":{},
+      "links": {
+        "prefix": "Heb je al een account?",
+        "cta": "Log in"
+      },
+
+      "legal": {
+        "by-signing-up": "Door je aan te melden ga je akkoord met onze",
+        "terms": "Algemene voorwaarden",
+        "and": "en",
+        "privacy": "Privacybeleid"
+      }
+    },
+    "forgot-password": {
+    },
+    "reset-password": {
+    }
+  }
+}
