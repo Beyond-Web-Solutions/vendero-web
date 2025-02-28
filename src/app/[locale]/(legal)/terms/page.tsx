@@ -1,4 +1,4 @@
-import { PageProps } from "@scani/_lib/types/props";
+import { PageProps } from "@vendero/_lib/types/props";
 import { setRequestLocale } from "next-intl/server";
 
 export default async function TermsPage({ params }: PageProps) {

@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+
+    "gen:types": "npx supabase gen types typescript --local > ./src/_lib/types/supabase.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",

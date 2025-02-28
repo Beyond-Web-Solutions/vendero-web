@@ -23,6 +23,12 @@ export const routing = defineRouting({
     "/sign-up": {
       "nl-NL": "/registreren",
     },
+    "/forgot-password": {
+      "nl-NL": "/wachtwoord-vergeten",
+    },
+    "/reset-password": {
+      "nl-NL": "/wachtwoord-resetten",
+    },
 
     "/terms": {
       "nl-NL": "/voorwaarden",
@@ -30,6 +36,8 @@ export const routing = defineRouting({
     "/privacy": {
       "nl-NL": "/privacy",
     },
+
+    "/app": "/app",
   },
 });
 

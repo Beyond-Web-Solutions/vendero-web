@@ -1,7 +1,7 @@
-import { LayoutProps } from "@scani/_lib/types/props";
+import { LayoutProps } from "@vendero/_lib/types/props";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ScanBarcodeIcon } from "lucide-react";
-import { Link } from "@scani/_lib/i18n/routing";
+import { Link } from "@vendero/_lib/i18n/routing";
 
 export default async function AuthLayout({ children, params }: LayoutProps) {
   const { locale } = await params;

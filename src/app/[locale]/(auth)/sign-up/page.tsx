@@ -1,14 +1,14 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { PageProps } from "@scani/_lib/types/props";
+import { PageProps } from "@vendero/_lib/types/props";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@scani/_components/ui/card";
-import { Link } from "@scani/_lib/i18n/routing";
-import { SignUpForm } from "@scani/app/[locale]/(auth)/sign-up/_components/form";
+} from "@vendero/_components/ui/card";
+import { Link } from "@vendero/_lib/i18n/routing";
+import { SignUpForm } from "@vendero/app/[locale]/(auth)/sign-up/_components/form";
 
 export default async function SignUpPage({ params }: PageProps) {
   const { locale } = await params;

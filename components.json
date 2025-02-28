@@ -11,11 +11,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@scani/_components",
-    "utils": "@scani/_lib/utils/ui/cn",
-    "ui": "@scani/_components/ui",
-    "lib": "@scani/_lib",
-    "hooks": "@scani/_hooks"
+    "components": "@vendero/_components",
+    "utils": "@vendero/_lib/utils/ui/cn",
+    "ui": "@vendero/_components/ui",
+    "lib": "@vendero/_lib",
+    "hooks": "@vendero/_hooks"
   },
   "iconLibrary": "lucide"
 }

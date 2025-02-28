@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@scani/*": ["./src/*"]
+      "@vendero/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

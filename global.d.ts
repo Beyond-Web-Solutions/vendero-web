@@ -1,5 +1,5 @@
-import { routing } from "@scani/_lib/i18n/routing";
-import { formats } from "@scani/_lib/i18n/request";
+import { routing } from "@vendero/_lib/i18n/routing";
+import { formats } from "@vendero/_lib/i18n/request";
 import messages from "./messages/nl-NL.json";
 
 declare module "next-intl" {

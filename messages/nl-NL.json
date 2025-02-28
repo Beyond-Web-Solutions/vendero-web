@@ -1,10 +1,24 @@
 {
   "common": {
-    "app-name": "Scani"
+    "app-name": "Vendero",
+
+    "errors": {
+      "server": {},
+      "client": {},
+      "validation": {
+        "invalid-mail": "Ongeldig e-mailadres",
+        "password-too-short": "Wachtwoord moet minimaal 6 tekens lang zijn",
+        "passwords-dont-match": "Wachtwoorden komen niet overeen",
+        "required": "Dit veld is verplicht",
+        "otp-must-be-6-characters": "Eenmalig wachtwoord moet 6 tekens lang zijn",
+        "company-name-too-short": "Bedrijfsnaam moet minimaal 3 tekens lang zijn",
+        "invalid-company-type": "Ongeldig bedrijfstype"
+      }
+    }
   },
   "coming-soon": {
     "title": "Binnenkort beschikbaar",
-    "description": "Scani is momenteel in ontwikkeling.",
+    "description": "Vendero is momenteel in ontwikkeling.",
     "cta": "Inloggen"
   },
   "auth": {
