@@ -155,7 +155,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
       className={cn("text-destructive-foreground text-sm", className)}
       {...props}
     >
-      {body}
+      {t(body as never)}
     </p>
   );
 }

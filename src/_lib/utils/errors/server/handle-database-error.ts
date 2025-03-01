@@ -1,6 +1,6 @@
 import { PostgrestError } from "@supabase/supabase-js";
-import { ServerActionResponse } from "@/_lib/types/response";
 import { getLocale, getTranslations } from "next-intl/server";
+import { ServerActionResponse } from "@vendero/_lib/types/response";
 
 export async function handleDatabaseError<Schema, Response = undefined>(
   key: string,

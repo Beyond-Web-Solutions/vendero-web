@@ -1,11 +1,11 @@
 import { AuthError } from "@supabase/supabase-js";
-import { ServerActionResponse } from "@/_lib/types/response";
 import { getTranslations } from "next-intl/server";
+import { ServerActionResponse } from "@vendero/_lib/types/response";
 
 export async function handleSupabaseAuthError<Schema, Response = undefined>(
   error: AuthError,
 ): ServerActionResponse<Schema, Response> {
-  const t = await getTranslations("auth.errors");
+  const t = await getTranslations("common.errors.auth");
 
   console.error(error);
 
