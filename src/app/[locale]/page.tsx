@@ -28,7 +28,7 @@ export default async function HomePage({ params }: PageProps) {
         </CardHeader>
         <CardFooter>
           <Button asChild>
-            <Link href="/sign-in">
+            <Link href="/auth/sign-in">
               {t("cta")}
               <ChevronRightIcon />
             </Link>

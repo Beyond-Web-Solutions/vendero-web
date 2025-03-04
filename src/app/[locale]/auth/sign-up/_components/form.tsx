@@ -12,15 +12,22 @@ import { useForm } from "react-hook-form";
 import {
   SignUpFormData,
   signUpSchema,
-} from "@vendero/app/[locale]/(auth)/sign-up/_lib/definitions/sign-up";
+} from "@vendero/app/[locale]/auth/sign-up/_lib/definitions/sign-up";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormErrorAlert } from "@vendero/_components/common/form-error-alert";
-import { useTranslations } from "next-intl";
+import { FormErrorAlert } from "@vendero/_components/common/form/alert";
+import { useLocale, useTranslations } from "next-intl";
 import { Input } from "@vendero/_components/ui/input";
-import { SubmitButton } from "@vendero/_components/common/submit-button";
+import { SubmitButton } from "@vendero/_components/common/form/submit-button";
+import Turnstile, { useTurnstile } from "react-turnstile";
+import { signUp } from "../_lib/actions/sign-up";
+import { handleServerValidationError } from "@vendero/_lib/utils/errors/client/server-validation-error-handler";
+import { redirect } from "@vendero/_lib/i18n/routing";
 
 export function SignUpForm() {
+  const turnstile = useTurnstile();
+
   const t = useTranslations("auth.sign-up.form");
+  const locale = useLocale();
 
   const form = useForm<SignUpFormData>({
     resolver: zodResolver(signUpSchema),
@@ -33,10 +40,25 @@ export function SignUpForm() {
   });
 
   async function onSubmit(values: SignUpFormData) {
-    console.log(values);
-  }
+    const response = await signUp(values);
 
-  console.log(form.formState.errors);
+    if (!response.ok) {
+      turnstile.reset();
+
+      return handleServerValidationError<SignUpFormData>(
+        response.errors,
+        form.setError,
+      );
+    }
+
+    redirect({
+      href: {
+        pathname: "/auth/confirm-email",
+        query: { email: response.data },
+      },
+      locale,
+    });
+  }
 
   return (
     <Form {...form}>
@@ -95,6 +117,13 @@ export function SignUpForm() {
               <FormMessage />
             </FormItem>
           )}
+        />
+
+        <Turnstile
+          size="invisible"
+          className="hidden"
+          sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onVerify={(token) => form.setValue("captcha", token)}
         />
 
         <SubmitButton label={t("submit")} />

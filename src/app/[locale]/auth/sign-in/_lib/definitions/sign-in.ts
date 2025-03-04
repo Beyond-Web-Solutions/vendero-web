@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { authSchema } from "@vendero/app/[locale]/(auth)/_lib/definitions/auth";
+import { authSchema } from "@vendero/app/[locale]/auth/_lib/definitions/auth";
 
 export const signInSchema = authSchema.extend({});
 

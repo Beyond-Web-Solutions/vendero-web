@@ -1,7 +1,6 @@
 {
   "common": {
     "app-name": "Vendero",
-
     "errors": {
       "title": "Oeps!",
       "server": {},
@@ -113,6 +112,16 @@
       "title": "Welkom terug",
       "description": "Log in met je email en wachtwoord.",
       "form": {
+        "email": {
+          "label": "E-mailadres",
+          "placeholder": "voorbeeld@email.com"
+        },
+        "password": {
+          "label": "Wachtwoord",
+          "placeholder": "********",
+          "forgot": "Wachtwoord vergeten?"
+        },
+        "submit": "Inloggen"
       },
       "links": {
         "prefix": "Nog geen account?",
@@ -120,30 +129,27 @@
       }
     },
     "sign-up": {
-      "title": "Wekom",
+      "title": "Welkom!",
       "description": "Maak een account aan met je email en wachtwoord.",
-
-      "form":{
+      "form": {
         "email": {
           "label": "E-mailadres",
           "placeholder": "voorbeeld@email.com"
         },
         "password": {
-          "label":  "Wachtwoord",
+          "label": "Wachtwoord",
           "placeholder": "********"
         },
         "confirm": {
-          "label":  "Bevestig wachtwoord",
+          "label": "Bevestig wachtwoord",
           "placeholder": "********"
         },
-
         "submit": "Registreer"
       },
       "links": {
         "prefix": "Heb je al een account?",
         "cta": "Log in"
       },
-
       "legal": {
         "by-signing-up": "Door je aan te melden ga je akkoord met onze",
         "terms": "Algemene voorwaarden",
@@ -151,7 +157,38 @@
         "privacy": "Privacybeleid"
       }
     },
+    "confirm-email": {
+      "title": "Bevestig je e-mailadres",
+      "description": "We hebben een e-mail gestuurd naar {email}. Klik op de link in de e-mail om je account te activeren.",
+      "success": {
+        "title": "E-mailadres bevestigd",
+        "description": "Je e-mailadres is bevestigd. Je kunt nu inloggen.",
+        "cta": "Inloggen"
+      },
+      "error": {
+        "title": "E-mailadres niet bevestigd",
+        "description": "Er is een fout opgetreden bij het bevestigen van je e-mailadres. Probeer het opnieuw door opnieuw te registreren.",
+        "cta": "Registreer"
+      }
+    },
     "forgot-password": {
+      "title": "Wachtwoord vergeten",
+      "description": "Vul je e-mailadres in en we sturen je een link om je wachtwoord opnieuw in te stellen.",
+      "form": {
+        "alert": {
+          "title": "Verzonden!",
+          "description": "We hebben een e-mail gestuurd  met instructies om je wachtwoord opnieuw in te stellen."
+        },
+        "email": {
+          "label": "E-mailadres",
+          "placeholder": "voorbeeld@email.com"
+        },
+        "submit": "Verstuur"
+      },
+      "links": {
+        "prefix": "Weet je je wachtwoord nog?",
+        "cta": "Inloggen"
+      }
     },
     "reset-password": {
     }

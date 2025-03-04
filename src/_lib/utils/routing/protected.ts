@@ -3,7 +3,7 @@ import { getPathname } from "@vendero/_lib/i18n/routing";
 
 export function getProtectedRoutes(locale: Locale) {
   return [
-    getPathname({ href: "/reset-password", locale }),
+    getPathname({ href: "/auth/reset-password", locale }),
     getPathname({ href: "/app", locale }),
   ] as const;
 }

@@ -17,16 +17,28 @@ export const routing = defineRouting({
   pathnames: {
     "/": "/",
 
-    "/sign-in": {
+    "/auth/sign-in": {
       "nl-NL": "/inloggen",
     },
-    "/sign-up": {
+    "/auth/sign-up": {
       "nl-NL": "/registreren",
     },
-    "/forgot-password": {
+    "/auth/confirm-email": {
+      "nl-NL": "/bevestig-email",
+    },
+    "/auth/confirm-email/success": {
+      "nl-NL": "/bevestig-email/succes",
+    },
+    "/auth/confirm-email/error": {
+      "nl-NL": "/bevestig-email/fout",
+    },
+    "/auth/forgot-password": {
       "nl-NL": "/wachtwoord-vergeten",
     },
-    "/reset-password": {
+    "/auth/forgot-password/check-email": {
+      "nl-NL": "/wachtwoord-vergeten/check-email",
+    },
+    "/auth/reset-password": {
       "nl-NL": "/wachtwoord-resetten",
     },
 

@@ -18,7 +18,7 @@ export async function middleware(request: NextRequest) {
 
   if (!user && isProtectedRoute(request.nextUrl, locale)) {
     const url = request.nextUrl;
-    url.pathname = getPathname({ href: "/sign-in", locale });
+    url.pathname = getPathname({ href: "/auth/sign-in", locale });
 
     return NextResponse.redirect(url);
   }

@@ -1,4 +1,4 @@
-import { authSchema } from "@vendero/app/[locale]/(auth)/_lib/definitions/auth";
+import { authSchema } from "@vendero/app/[locale]/auth/_lib/definitions/auth";
 import { z } from "zod";
 
 export const signUpSchema = authSchema

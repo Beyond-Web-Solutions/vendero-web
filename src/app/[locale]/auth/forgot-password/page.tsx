@@ -1,5 +1,6 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageProps } from "@vendero/_lib/types/props";
+import { Suspense, use } from "react";
+import { setRequestLocale } from "next-intl/server";
 import {
   Card,
   CardContent,
@@ -7,17 +8,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@vendero/_components/ui/card";
-import { SignInForm } from "@vendero/app/[locale]/(auth)/sign-in/_components/form";
 import { Link } from "@vendero/_lib/i18n/routing";
+import { useTranslations } from "next-intl";
+import { ForgotPasswordForm } from "@vendero/app/[locale]/auth/forgot-password/_components/form";
+import { AuthFormFallback } from "@vendero/app/[locale]/auth/_components/fallback/form";
 
-export default async function SignInPage({ params }: PageProps) {
-  const { locale } = await params;
+export default function ForgotPasswordPage({ params }: PageProps) {
+  const { locale } = use(params);
 
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = await getTranslations("auth.sign-in");
-
+  const t = useTranslations("auth.forgot-password");
   return (
     <Card>
       <CardHeader className="text-center">
@@ -25,10 +27,15 @@ export default async function SignInPage({ params }: PageProps) {
         <CardDescription>{t("description")}</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        <SignInForm />
+        <Suspense fallback={<AuthFormFallback inputs={1} />}>
+          <ForgotPasswordForm />
+        </Suspense>
         <div className="text-center text-sm">
           {t("links.prefix")}
-          <Link href="/sign-up" className="ms-1 underline underline-offset-4">
+          <Link
+            href="/auth/sign-in"
+            className="ms-1 underline underline-offset-4"
+          >
             {t("links.cta")}
           </Link>
         </div>
