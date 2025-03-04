@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Turnstile, { useTurnstile } from "react-turnstile";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,7 +27,7 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@vendero/_components/ui/alert";
-import { MailCheckIcon, Terminal } from "lucide-react";
+import { MailCheckIcon } from "lucide-react";
 
 export function ForgotPasswordForm() {
   const turnstile = useTurnstile();
