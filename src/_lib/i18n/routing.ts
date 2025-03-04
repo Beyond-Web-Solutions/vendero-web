@@ -35,9 +35,6 @@ export const routing = defineRouting({
     "/auth/forgot-password": {
       "nl-NL": "/wachtwoord-vergeten",
     },
-    "/auth/forgot-password/check-email": {
-      "nl-NL": "/wachtwoord-vergeten/check-email",
-    },
     "/auth/reset-password": {
       "nl-NL": "/wachtwoord-resetten",
     },
