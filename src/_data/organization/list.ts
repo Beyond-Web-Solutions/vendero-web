@@ -49,7 +49,7 @@ export async function getOrganizationCountForCurrentUser() {
   }
 
   return unstable_cache(
-    async (_userId: string) => {
+    async () => {
       const { data } = await supabase.rpc("count_org_members");
 
       return data ?? 0;
@@ -58,5 +58,5 @@ export async function getOrganizationCountForCurrentUser() {
     {
       tags: [`organizations:${user.id}`],
     },
-  )(user.id);
+  )();
 }

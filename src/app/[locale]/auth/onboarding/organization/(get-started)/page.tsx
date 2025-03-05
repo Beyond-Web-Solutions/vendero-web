@@ -6,18 +6,11 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@vendero/_components/ui/card";
-import { Button } from "@vendero/_components/ui/button";
 import { Link } from "@vendero/_lib/i18n/routing";
-import {
-  BuildingIcon,
-  ChevronRight,
-  ChevronRightIcon,
-  UserPlusIcon,
-} from "lucide-react";
+import { BuildingIcon, ChevronRightIcon, UserPlusIcon } from "lucide-react";
 
 export default function OnboardingOrganizationPage({ params }: PageProps) {
   const { locale } = use(params);
