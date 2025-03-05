@@ -39,6 +39,19 @@ export const routing = defineRouting({
       "nl-NL": "/wachtwoord-resetten",
     },
 
+    "/auth/onboarding": {
+      "nl-NL": "/onboarding",
+    },
+    "/auth/onboarding/join-organization": {
+      "nl-NL": "/onboarding/voeg-organisatie-toe",
+    },
+    "/auth/onboarding/create-organization": {
+      "nl-NL": "/onboarding/maak-organisatie",
+    },
+    "/auth/onboarding/billing": {
+      "nl-NL": "/onboarding/betaling",
+    },
+
     "/terms": {
       "nl-NL": "/voorwaarden",
     },
@@ -46,7 +59,7 @@ export const routing = defineRouting({
       "nl-NL": "/privacy",
     },
 
-    "/app": "/app",
+    "/dashboard": "/dashboard",
   },
 });
 

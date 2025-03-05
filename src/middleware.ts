@@ -25,7 +25,7 @@ export async function middleware(request: NextRequest) {
 
   if (user && isGuestRoute(request.nextUrl, locale)) {
     const url = request.nextUrl;
-    url.pathname = getPathname({ href: "/app", locale });
+    url.pathname = getPathname({ href: "/dashboard", locale });
 
     return NextResponse.redirect(url);
   }

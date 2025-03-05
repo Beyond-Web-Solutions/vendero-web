@@ -50,7 +50,7 @@ export function SignInForm() {
       );
     }
 
-    redirect({ href: "/app", locale });
+    redirect({ href: "/dashboard", locale });
   }
 
   return (

@@ -3,7 +3,9 @@
     "app-name": "Vendero",
     "errors": {
       "title": "Oeps!",
-      "server": {},
+      "server": {
+        "no-user": "Gebruiker niet gevonden"
+      },
       "client": {},
       "validation": {
         "invalid-mail": "Ongeldig e-mailadres",
@@ -210,5 +212,17 @@
         "cta": "Inloggen"
       }
     }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welkom!",
+      "description": "Voor dat je aan de slag kan gaan, hebben we wat informatie nodig om je account in te stellen.",
+
+      "cta": "Volgende"
+    }
+  },
+  "app": {
+    "fetching-data": "Gegevens ophalen...",
+    "home": {}
   }
 }

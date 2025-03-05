@@ -44,7 +44,7 @@ export function ResetPasswordForm() {
       );
     }
 
-    redirect({ href: "/app", locale });
+    redirect({ href: "/dashboard", locale });
   }
 
   return (
