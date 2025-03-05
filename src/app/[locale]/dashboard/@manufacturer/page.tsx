@@ -9,7 +9,5 @@ export default function ManufacturerAppHomePage({ params }: PageProps) {
   //enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations("app");
-
   return null;
 }
