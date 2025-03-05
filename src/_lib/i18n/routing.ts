@@ -42,11 +42,15 @@ export const routing = defineRouting({
     "/auth/onboarding": {
       "nl-NL": "/onboarding",
     },
-    "/auth/onboarding/join-organization": {
-      "nl-NL": "/onboarding/voeg-organisatie-toe",
+
+    "/auth/onboarding/organization": {
+      "nl-NL": "/onboarding/organisatie",
     },
-    "/auth/onboarding/create-organization": {
-      "nl-NL": "/onboarding/maak-organisatie",
+    "/auth/onboarding/organization/create": {
+      "nl-NL": "/onboarding/organisatie/aanmaken",
+    },
+    "/auth/onboarding/organization/join": {
+      "nl-NL": "/onboarding/organisatie/toevoegen",
     },
     "/auth/onboarding/billing": {
       "nl-NL": "/onboarding/betaling",

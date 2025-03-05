@@ -4,7 +4,9 @@
     "errors": {
       "title": "Oeps!",
       "server": {
-        "no-user": "Gebruiker niet gevonden"
+        "no-user": "Gebruiker niet gevonden",
+        "error-creating-organization": "Er is een fout opgetreden bij het maken van de organisatie",
+        "error-creating-organization-member": "Er is een fout opgetreden bij het maken van de organisatie lid"
       },
       "client": {},
       "validation": {
@@ -13,7 +15,7 @@
         "passwords-dont-match": "Wachtwoorden komen niet overeen",
         "required": "Dit veld is verplicht",
         "otp-must-be-6-characters": "Eenmalig wachtwoord moet 6 tekens lang zijn",
-        "company-name-too-short": "Bedrijfsnaam moet minimaal 3 tekens lang zijn",
+        "company-name-too-short": "Bedrijfsnaam mag niet leeg zijn",
         "invalid-company-type": "Ongeldig bedrijfstype"
       },
       "auth": {
@@ -204,7 +206,6 @@
           "label": "Bevestig wachtwoord",
           "placeholder": "********"
         },
-
         "submit": "Herstel"
       },
       "links": {
@@ -217,8 +218,56 @@
     "welcome": {
       "title": "Welkom!",
       "description": "Voor dat je aan de slag kan gaan, hebben we wat informatie nodig om je account in te stellen.",
-
       "cta": "Volgende"
+    },
+    "organization": {
+      "get-started": {
+        "title": "Aan de slag",
+        "description": "Maak een nieuwe organisatie aan of sluit je aan bij een bestaande organisatie.",
+        "create": {
+          "title": "Nieuwe organisatie",
+          "description": "Maak een nieuwe organisatie aan."
+        },
+        "join": {
+          "title": "Bestaande organisatie",
+          "description": "Sluit je aan bij een bestaande organisatie."
+        }
+      },
+      "join": {
+        "title": "Sluit je aan",
+        "description": "Vul de code in die je hebt ontvangen om je aan te sluiten bij een organisatie.",
+        "links": {
+          "back": "Terug"
+        }
+      },
+      "create": {
+        "title": "Nieuwe organisatie",
+        "description": "Maak een nieuwe organisatie aan.",
+        "form": {
+          "name": {
+            "label": "Organisatienaam"
+          },
+          "email": {
+            "label": "Zakelijk e-mailadres",
+            "description": "Dit e-mailadres wordt gebruikt voor communicatie met je organisatie."
+          },
+          "billing_email": {
+            "label": "Facturatie e-mailadres"
+          },
+          "type": {
+            "label": "Type bedrijf",
+            "placeholder": "Selecteer een type bedrijf",
+            "values": {
+              "manufacturer": "Fabrikant",
+              "shop": "Winkel"
+            }
+          },
+          "submit": "Maak organisatie aan"
+        },
+        "links": {
+          "back": "Terug"
+        }
+      }
     }
   },
   "app": {
