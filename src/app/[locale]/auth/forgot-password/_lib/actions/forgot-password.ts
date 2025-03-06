@@ -22,6 +22,7 @@ export async function forgotPassword(
       errors: parsed.error.flatten(),
     };
   }
+
   const [supabase, locale] = await Promise.all([createClient(), getLocale()]);
 
   const url = getUrl();

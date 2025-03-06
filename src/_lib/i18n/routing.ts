@@ -55,6 +55,9 @@ export const routing = defineRouting({
     "/auth/onboarding/billing": {
       "nl-NL": "/onboarding/betaling",
     },
+    "/auth/onboarding/billing/return": {
+      "nl-NL": "/onboarding/betaling/terug",
+    },
 
     "/terms": {
       "nl-NL": "/voorwaarden",

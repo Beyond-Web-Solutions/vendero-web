@@ -7,7 +7,7 @@ import {
 } from "@vendero/app/[locale]/auth/onboarding/organization/create/_lib/definitions/create-organization";
 import { getUserServerAction } from "@vendero/_data/user/get";
 import { createClient } from "@vendero/_lib/utils/supabase/server";
-import { handleDatabaseError } from "@vendero/_lib/utils/errors/server/handle-database-error";
+import { handleServerActionError } from "@vendero/_lib/utils/errors/server/handle-server-action-error";
 import { handleSupabaseAuthError } from "@vendero/_lib/utils/errors/server/handle-supabase-auth-error";
 import { revalidateOrganizationsForCurrentUserCache } from "@vendero/_data/organization/list";
 
@@ -39,7 +39,7 @@ export async function createOrganization(
     .single();
 
   if (createOrganizationError) {
-    return handleDatabaseError<CreateOrganizationFormData>(
+    return handleServerActionError<CreateOrganizationFormData>(
       "error-creating-organization",
       createOrganizationError,
     );
@@ -52,7 +52,7 @@ export async function createOrganization(
     });
 
   if (createEmployeeError) {
-    return handleDatabaseError<CreateOrganizationFormData>(
+    return handleServerActionError<CreateOrganizationFormData>(
       "error-creating-organization-member",
       createEmployeeError,
     );

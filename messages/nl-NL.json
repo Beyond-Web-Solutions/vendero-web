@@ -6,7 +6,9 @@
       "server": {
         "no-user": "Gebruiker niet gevonden",
         "error-creating-organization": "Er is een fout opgetreden bij het maken van de organisatie",
-        "error-creating-organization-member": "Er is een fout opgetreden bij het maken van de organisatie lid"
+        "error-creating-organization-member": "Er is een fout opgetreden bij het maken van de organisatie lid",
+        "no-checkout-url": "Geen afreken-URL gevonden",
+        "no-customer-id": "Geen klant-ID gevonden"
       },
       "client": {},
       "validation": {
@@ -268,6 +270,15 @@
           "back": "Terug"
         }
       }
+    },
+    "billing": {
+      "title": "Kies een plan",
+      "description": "Kies een plan dat past bij de behoeften van je organisatie.",
+
+      "form": {
+        "submit": "Kies plan"
+      },
+      "links": {}
     }
   },
   "app": {

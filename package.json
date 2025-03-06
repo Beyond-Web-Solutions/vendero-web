@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:types": "npx supabase gen types typescript --local > ./src/_lib/types/supabase.ts"
+    "gen:types": "npx supabase gen types typescript --local --schema public --schema stripe > ./src/_lib/types/supabase.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
     "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
@@ -27,6 +28,7 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-turnstile": "^1.1.4",
+    "stripe": "^17.7.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
