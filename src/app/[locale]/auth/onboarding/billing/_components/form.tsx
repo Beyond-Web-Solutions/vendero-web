@@ -79,7 +79,7 @@ export function OnboardingChoosePlanForm({ plans }: Props) {
                         field.value === plan.default_price && "border-primary",
                       )}
                     >
-                      <div className="space-y-0.5">
+                      <div className="space-y-1">
                         <FormLabel>{plan.name}</FormLabel>
                         <FormDescription>{plan.description}</FormDescription>
                       </div>

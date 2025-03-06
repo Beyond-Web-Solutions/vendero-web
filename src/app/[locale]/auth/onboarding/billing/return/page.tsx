@@ -3,6 +3,8 @@ import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Card } from "@vendero/_components/ui/card";
+import { BillingReturnSuccess } from "@vendero/app/[locale]/auth/onboarding/billing/return/_components/success";
+import { BillingReturnFailed } from "@vendero/app/[locale]/auth/onboarding/billing/return/_components/failed";
 
 export default function OnboardingBillingReturnPage({
   params,
@@ -21,5 +23,9 @@ export default function OnboardingBillingReturnPage({
   // enable static rendering
   setRequestLocale(locale);
 
-  return <Card></Card>;
+  if (status === "success" && session_id) {
+    return <BillingReturnSuccess sessionId={session_id} />;
+  }
+
+  return <BillingReturnFailed />;
 }

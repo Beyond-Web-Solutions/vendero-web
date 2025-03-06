@@ -4,6 +4,7 @@ import { Locale } from "next-intl";
 import { getManufacturerPricingPlans } from "@vendero/_data/pricing/manufacturer";
 import { getShopPricingPlans } from "@vendero/_data/pricing/shop";
 import { OnboardingChoosePlanForm } from "@vendero/app/[locale]/auth/onboarding/billing/_components/form";
+import { getUserOrganizationSubscription } from "@vendero/_data/subscription/get";
 
 interface Props {
   locale: Locale;
@@ -14,6 +15,12 @@ export async function OnboardingPricingAsync({ locale }: Props) {
 
   if (!organization) {
     return redirect({ href: "/auth/onboarding/organization", locale });
+  }
+
+  const subscription = await getUserOrganizationSubscription();
+
+  if (subscription) {
+    return redirect({ href: "/dashboard", locale });
   }
 
   if (organization.type === "manufacturer") {

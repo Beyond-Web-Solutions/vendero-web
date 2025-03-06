@@ -16,6 +16,12 @@ export const routing = defineRouting({
   },
   pathnames: {
     "/": "/",
+    "/pricing": {
+      "nl-NL": "/prijzen",
+    },
+    "/contact": {
+      "nl-NL": "/contact",
+    },
 
     "/auth/sign-in": {
       "nl-NL": "/inloggen",

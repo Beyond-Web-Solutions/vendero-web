@@ -274,11 +274,24 @@
     "billing": {
       "title": "Kies een plan",
       "description": "Kies een plan dat past bij de behoeften van je organisatie.",
-
       "form": {
         "submit": "Kies plan"
       },
-      "links": {}
+      "links": {
+        "prefix": "Pakket vergelijken?",
+        "cta": "Bekijk onze prijzen"
+      },
+      "success": {
+        "title": "Abonnement geactiveerd",
+        "description": "Gefeliciteerd! Je kunt nu aan de slag met Vendero.",
+        "manage": "Beheer abonnement",
+        "cta": "Aan de slag"
+      },
+      "error": {
+        "title": "Fout bij activeren abonnement",
+        "description": "Er is een fout opgetreden bij het activeren van je abonnement. Probeer het opnieuw.",
+        "cta": "Probeer opnieuw"
+      }
     }
   },
   "app": {
