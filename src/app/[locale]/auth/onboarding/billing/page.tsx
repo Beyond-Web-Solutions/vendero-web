@@ -1,5 +1,5 @@
 import { PageProps } from "@vendero/_lib/types/props";
-import { Suspense, use } from "react";
+import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import {
   Card,
