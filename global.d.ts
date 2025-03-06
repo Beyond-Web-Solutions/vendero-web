@@ -9,3 +9,9 @@ declare module "next-intl" {
     Formats: typeof formats;
   }
 }
+
+declare module "@supabase/supabase-js" {
+  interface UserMetadata {
+    organization_id: string | undefined | null;
+  }
+}

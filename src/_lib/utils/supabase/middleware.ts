@@ -1,11 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
+import { Database } from "@vendero/_lib/types/supabase";
 
 export async function supabaseMiddleware(
   request: NextRequest,
   response: NextResponse,
 ) {
-  const supabase = createServerClient(
+  const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -32,5 +33,5 @@ export async function supabaseMiddleware(
     data: { user },
   } = await supabase.auth.getUser();
 
-  return { user, response };
+  return { user, response, supabase };
 }

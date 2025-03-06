@@ -3,7 +3,7 @@ import { unstable_cache } from "next/cache";
 import { getUser } from "@vendero/_data/user/get";
 import { createClient } from "@vendero/_lib/utils/supabase/server";
 
-export async function getOrganizationId(): Promise<string | undefined> {
+export async function getOrganizationId(): Promise<string | undefined | null> {
   const user = await getUser();
 
   return user?.user_metadata?.organization_id;
