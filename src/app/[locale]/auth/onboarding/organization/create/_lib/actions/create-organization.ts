@@ -58,9 +58,16 @@ export async function createOrganization(
     );
   }
 
+  const { data: member } = await supabase
+    .from("organization_members")
+    .select("id")
+    .eq("organization_id", organization.id)
+    .eq("user_id", getUserResponse.data.id)
+    .single();
+
   const { error: updateUserError } = await supabase.auth.updateUser({
     data: {
-      organization_id: organization.id,
+      organization_member_id: member?.id,
     },
   });
 

@@ -37,7 +37,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  const organizationId = user?.user_metadata.organization_id;
+  const organizationId = user?.user_metadata.organization_member_id;
 
   // if the user already has an organization, redirect to the dashboard
   if (
@@ -73,6 +73,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // TODO: validate the users subscription when on the dashboard pages
+  // TODO: validate if the user has a shop or manufacturer account and enforce the correct dashboard
 
   return response;
 }

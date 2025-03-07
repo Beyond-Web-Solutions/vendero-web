@@ -12,6 +12,6 @@ declare module "next-intl" {
 
 declare module "@supabase/supabase-js" {
   interface UserMetadata {
-    organization_id: string | undefined | null;
+    organization_member_id: string | undefined | null;
   }
 }

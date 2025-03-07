@@ -27,13 +27,20 @@ create or replace function public.get_subscription() RETURNS stripe.subscription
         search_path = '' as
 $$
 DECLARE
+    member_id  uuid;
     org_id  uuid;
     cust_id text;
     sub     stripe.subscriptions%rowtype;
 BEGIN
     -- Retrieve the organization ID from the JWT's user_metadata and cast to uuid
-    SELECT (auth.jwt() -> 'user_metadata' ->> 'organization_id')::uuid
-    INTO org_id;
+    SELECT (auth.jwt() -> 'user_metadata' ->> 'organization_member_id')::uuid
+    INTO member_id;
+
+    -- Get the organization_id from the organizations_members table
+    SELECT organization_id
+    INTO org_id
+    FROM public.organization_members
+    WHERE id = member_id;
 
     -- Get the corresponding customer_id from the organizations table
     SELECT customer_id

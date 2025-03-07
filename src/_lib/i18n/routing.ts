@@ -73,6 +73,13 @@ export const routing = defineRouting({
     },
 
     "/dashboard": "/dashboard",
+
+    "/dashboard/manufacturers": {
+      "nl-NL": "/dashboard/fabrikanten",
+    },
+    "/dashboard/shops": {
+      "nl-NL": "/dashboard/winkels",
+    },
   },
 });
 

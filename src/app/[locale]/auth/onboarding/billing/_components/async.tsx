@@ -1,9 +1,9 @@
-import { getUserOrganization } from "@vendero/_data/organization/get";
 import { redirect } from "@vendero/_lib/i18n/routing";
 import { Locale } from "next-intl";
 import { getManufacturerPricingPlans } from "@vendero/_data/pricing/manufacturer";
 import { getShopPricingPlans } from "@vendero/_data/pricing/shop";
 import { OnboardingChoosePlanForm } from "@vendero/app/[locale]/auth/onboarding/billing/_components/form";
+import { getUserOrganization } from "@vendero/_data/organization-member/get";
 
 interface Props {
   locale: Locale;

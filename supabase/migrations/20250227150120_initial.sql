@@ -1,3 +1,6 @@
+create extension if not exists wrappers with schema extensions;
+create schema if not exists stripe;
+
 -- ENUMS
 create type public.user_role as enum ('owner', 'admin', 'user');
 create type public.organization_type as enum ('manufacturer', 'shop');
@@ -135,16 +138,6 @@ BEGIN
                      AND user_id = (select auth.uid()))
     INTO is_member;
     RETURN is_member;
-END;
-$$;
-
-CREATE FUNCTION public.get_shop_pricing_plans() RETURNS setof stripe.products
-    LANGUAGE plpgsql
-    security definer set search_path = ''
-AS
-$$
-BEGIN
-    select * from stripe.products where attrs -> 'metadata' ->> 'type' = 'shop';
 END;
 $$;
 

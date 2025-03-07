@@ -1,7 +1,7 @@
 import { AppLayoutProps } from "@vendero/app/[locale]/dashboard/layout";
-import { getUserOrganization } from "@vendero/_data/organization/get";
 import { Locale } from "next-intl";
 import { redirect } from "@vendero/_lib/i18n/routing";
+import { getUserOrganization } from "@vendero/_data/organization-member/get";
 
 type Props = Omit<AppLayoutProps, "params"> & { locale: Locale };
 

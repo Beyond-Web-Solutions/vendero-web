@@ -10,7 +10,7 @@ import { handleServerActionError } from "@vendero/_lib/utils/errors/server/handl
 import { getUrl } from "@vendero/_lib/utils/routing/url";
 import { getPathname } from "@vendero/_lib/i18n/routing";
 import { getLocale } from "next-intl/server";
-import { getUserOrganization } from "@vendero/_data/organization/get";
+import { getUserOrganization } from "@vendero/_data/organization-member/get";
 
 export async function subscribeToPlan(
   values: ChoosePlanFormData,

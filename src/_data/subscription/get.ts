@@ -1,11 +1,9 @@
 import { createClient } from "@vendero/_lib/utils/supabase/server";
 import { unstable_cache } from "next/cache";
-import {
-  getOrganization,
-  getUserOrganization,
-} from "@vendero/_data/organization/get";
+import { getOrganization } from "@vendero/_data/organization/get";
 import { SupabaseClient } from "@supabase/supabase-js";
 import { Database } from "@vendero/_lib/types/supabase";
+import { getUserOrganization } from "@vendero/_data/organization-member/get";
 
 export async function getUserOrganizationSubscription() {
   const supabase = await createClient();
