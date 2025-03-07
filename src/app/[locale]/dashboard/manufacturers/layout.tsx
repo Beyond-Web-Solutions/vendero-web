@@ -1,6 +1,8 @@
 import { LayoutProps } from "@vendero/_lib/types/props";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
+import { SidebarInset, SidebarProvider } from "@vendero/_components/ui/sidebar";
+import { ManufacturerDashboardSidebar } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/sidebar";
 
 export default function ManufacturerDashboardLayout({
   params,
@@ -11,5 +13,10 @@ export default function ManufacturerDashboardLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
-  return children;
+  return (
+    <SidebarProvider>
+      <ManufacturerDashboardSidebar />
+      <SidebarInset>{children}</SidebarInset>
+    </SidebarProvider>
+  );
 }

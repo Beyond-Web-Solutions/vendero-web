@@ -294,8 +294,25 @@
       }
     }
   },
-  "app": {
-    "fetching-data": "Gegevens ophalen...",
-    "home": {}
+  "dashboard": {
+    "common": {
+      "profile": {
+        "unknown-name": "Onbekende naam",
+        "unknown-email": "Onbekend e-mailadres"
+      }
+    },
+    "manufacturer": {
+      "nav": {
+        "header": {
+          "unknown-org-name": "Onbekende organisatie",
+          "type": "Fabrikant"
+        },
+        "content": {},
+        "footer": {}
+      }
+    },
+    "shop": {
+      "nav":  {}
+    }
   }
 }
