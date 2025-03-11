@@ -10,11 +10,14 @@ import {
 import { getUserOrganization } from "@vendero/_data/organization-member/get";
 import { ChevronsUpDownIcon, FactoryIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { getOrganizationsForCurrentUser } from "@vendero/_data/organization/list";
+import { ManufacturerDashboardSidebarHeaderTeamSwitcher } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/content";
 
 export async function ManufacturerDashboardSidebarHeaderAsync() {
-  const [t, organization] = await Promise.all([
+  const [t, organization, organizations] = await Promise.all([
     getTranslations("dashboard.manufacturer.nav.header"),
     getUserOrganization(),
+    getOrganizationsForCurrentUser(),
   ]);
 
   return (
@@ -38,6 +41,9 @@ export async function ManufacturerDashboardSidebarHeaderAsync() {
               <ChevronsUpDownIcon className="ml-auto" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
+          <ManufacturerDashboardSidebarHeaderTeamSwitcher
+            organizations={organizations}
+          />
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>

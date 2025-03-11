@@ -4,8 +4,8 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "@vendero/_components/ui/sidebar";
-import { ManufacturerDashboardSidebarAccountMenu } from "./account-menu/wrapper/base";
-import { ManufacturerDashboardSidebarHeader } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/wrapper/base";
+import { ManufacturerDashboardSidebarAccountMenu } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/account-menu/button/base";
+import { ManufacturerDashboardSidebarHeader } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/button/base";
 
 export function ManufacturerDashboardSidebar() {
   return (

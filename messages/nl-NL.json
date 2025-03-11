@@ -305,7 +305,12 @@
       "nav": {
         "header": {
           "unknown-org-name": "Onbekende organisatie",
-          "type": "Fabrikant"
+          "type": "Fabrikant",
+
+          "team-switcher": {
+            "title": "Organisatie",
+            "add": "Organisatie toevoegen"
+          }
         },
         "content": {},
         "footer": {}
