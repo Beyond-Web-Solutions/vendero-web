@@ -1,33 +1,46 @@
+import { ComponentProps } from "react";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from "@vendero/_components/ui/sidebar";
-import { ManufacturerDashboardSidebarAccountMenu } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/footer/account-menu/trigger/base";
-import { ManufacturerDashboardSidebarHeader } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/team-switcher/base";
-import { ManufacturerDashboardSidebarSecondaryNav } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/nav/secondary/list";
-import { ManufacturerDashboardSidebarMainNav } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/nav/main/list";
-import { ComponentProps } from "react";
+import { FactoryIcon } from "lucide-react";
 
 export function ManufacturerDashboardSidebar(
   props: ComponentProps<typeof Sidebar>,
 ) {
   return (
     <Sidebar
-      className="top-[--header-height] !h-[calc(100svh-var(--header-height))]"
+      className="top-[var(--header-height)] !h-[calc(100svh-var(--header-height))]"
       {...props}
     >
       <SidebarHeader>
-        <ManufacturerDashboardSidebarHeader />
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild>
+              <a href="#">
+                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                  <FactoryIcon className="size-4" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">Acme Inc</span>
+                  <span className="truncate text-xs">Enterprise</span>
+                </div>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <ManufacturerDashboardSidebarMainNav />
-        <ManufacturerDashboardSidebarSecondaryNav className="mt-auto" />
+        {/*<NavMain items={data.navMain} />
+        <NavProjects projects={data.projects} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />*/}
       </SidebarContent>
-      <SidebarFooter>
-        <ManufacturerDashboardSidebarAccountMenu />
-      </SidebarFooter>
+      <SidebarFooter>{/*<NavUser user={data.user} />*/}</SidebarFooter>
     </Sidebar>
   );
 }

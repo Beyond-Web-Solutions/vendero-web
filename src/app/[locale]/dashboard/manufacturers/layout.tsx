@@ -15,7 +15,7 @@ export default function ManufacturerDashboardLayout({
   setRequestLocale(locale);
 
   return (
-    <div className="[--header-height:calc(theme(spacing.14))]">
+    <div className="[var(--header-height):calc(theme(spacing.14))]">
       <SidebarProvider className="flex flex-col">
         <ManufacturerDashboardHeader />
         <div className="flex flex-1">
