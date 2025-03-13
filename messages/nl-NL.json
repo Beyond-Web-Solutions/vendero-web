@@ -312,7 +312,18 @@
             "add": "Organisatie toevoegen"
           }
         },
-        "content": {},
+        "content": {
+          "main": {
+            "insights": "Inzichten",
+            "products": "Producten",
+            "inventory": "Voorraad",
+            "shops": "Winkels"
+          },
+          "secondary": {
+            "support": "Ondersteuning",
+            "feedback": "Feedback"
+          }
+        },
         "footer": {}
       }
     },

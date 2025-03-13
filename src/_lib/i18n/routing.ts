@@ -22,6 +22,12 @@ export const routing = defineRouting({
     "/contact": {
       "nl-NL": "/contact",
     },
+    "/help": {
+      "nl-NL": "/help",
+    },
+    "/feedback": {
+      "nl-NL": "/feedback",
+    },
 
     "/auth/sign-in": {
       "nl-NL": "/inloggen",
@@ -77,6 +83,19 @@ export const routing = defineRouting({
     "/dashboard/manufacturers": {
       "nl-NL": "/dashboard/fabrikanten",
     },
+    "/dashboard/manufacturers/insights": {
+      "nl-NL": "/dashboard/fabrikanten/inzichten",
+    },
+    "/dashboard/manufacturers/products": {
+      "nl-NL": "/dashboard/fabrikanten/producten",
+    },
+    "/dashboard/manufacturers/inventory": {
+      "nl-NL": "/dashboard/fabrikanten/voorraad",
+    },
+    "/dashboard/manufacturers/shops": {
+      "nl-NL": "/dashboard/fabrikanten/winkels",
+    },
+
     "/dashboard/shops": {
       "nl-NL": "/dashboard/winkels",
     },
