@@ -6,7 +6,7 @@ import {
 import { getUserOrganization } from "@vendero/_data/organization-member/get";
 import { FactoryIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { ManufacturerDashboardSidebarHeaderLink } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/link";
+import { ClientLink } from "@vendero/_components/common/link/client";
 
 export async function ManufacturerDashboardSidebarHeaderAsync() {
   const [t, organization] = await Promise.all([
@@ -18,7 +18,7 @@ export async function ManufacturerDashboardSidebarHeaderAsync() {
     <SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton size="lg" asChild>
-          <ManufacturerDashboardSidebarHeaderLink>
+          <ClientLink href="/dashboard/manufacturers">
             <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
               <FactoryIcon className="size-4" />
             </div>
@@ -28,7 +28,7 @@ export async function ManufacturerDashboardSidebarHeaderAsync() {
               </span>
               <span className="truncate text-xs">{t("type")}</span>
             </div>
-          </ManufacturerDashboardSidebarHeaderLink>
+          </ClientLink>
         </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>

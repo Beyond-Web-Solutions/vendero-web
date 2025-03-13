@@ -1,5 +1,5 @@
-import { ManufacturerDashboardSidebarAccountMenuContent } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/account-menu/content";
-import { ManufacturerDashboardSidebarAccountMenuProfile } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/account-menu/profile";
+import { ManufacturerDashboardSidebarAccountMenuContent } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/footer/account-menu/content";
+import { ManufacturerDashboardSidebarAccountMenuProfile } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/footer/user-profile";
 import {
   SidebarMenu,
   SidebarMenuButton,

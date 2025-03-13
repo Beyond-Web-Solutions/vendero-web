@@ -8,14 +8,10 @@ import {
   DropdownMenuSeparator,
 } from "@vendero/_components/ui/dropdown-menu";
 import { useIsMobile } from "@vendero/_hooks/use-mobile";
-import { ManufacturerDashboardSidebarAccountMenuProfile } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/account-menu/profile";
-import {
-  BadgeCheckIcon,
-  BellIcon,
-  CreditCardIcon,
-  LogOutIcon,
-  SparklesIcon,
-} from "lucide-react";
+import { ManufacturerDashboardSidebarAccountMenuProfile } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/footer/user-profile";
+import { CreditCardIcon, LockIcon, LogOutIcon, UserIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "@vendero/_lib/i18n/routing";
 
 interface Props {
   name: string | null;
@@ -27,6 +23,7 @@ export function ManufacturerDashboardSidebarAccountMenuContent({
   email,
 }: Props) {
   const isMobile = useIsMobile();
+  const t = useTranslations("dashboard.common.footer");
 
   return (
     <DropdownMenuContent
@@ -45,30 +42,29 @@ export function ManufacturerDashboardSidebarAccountMenuContent({
       </DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <SparklesIcon />
-          Upgrade to Pro
+        <DropdownMenuItem asChild>
+          <Link href="/dashboard/manufacturers/account">
+            <UserIcon />
+            {t("account")}
+          </Link>
         </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <BadgeCheckIcon />
-          Account
+        <DropdownMenuItem asChild>
+          <Link href="/dashboard/manufacturers/account/security">
+            <LockIcon />
+            {t("security")}
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <CreditCardIcon />
-          Billing
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <BellIcon />
-          Notifications
+        <DropdownMenuItem asChild>
+          <Link href="/dashboard/manufacturers/account/billing">
+            <CreditCardIcon />
+            {t("billing")}
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuItem>
         <LogOutIcon />
-        Log out
+        {t("logout")}
       </DropdownMenuItem>
     </DropdownMenuContent>
   );

@@ -1,12 +1,15 @@
-import { PageProps } from "@vendero/_lib/types/props";
+import { LayoutProps } from "@vendero/_lib/types/props";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 
-export default function ManufacturerDashboardHomePage({ params }: PageProps) {
+export default function ManufacturerDashboardAccountLayout({
+  params,
+  children,
+}: LayoutProps) {
   const { locale } = use(params);
 
   // Enable static rendering
   setRequestLocale(locale);
 
-  return null;
+  return children;
 }

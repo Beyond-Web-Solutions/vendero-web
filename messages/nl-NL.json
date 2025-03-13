@@ -299,6 +299,12 @@
       "profile": {
         "unknown-name": "Onbekende naam",
         "unknown-email": "Onbekend e-mailadres"
+      },
+      "footer": {
+        "account": "Account",
+        "billing": "Facturatie",
+        "security": "Beveiliging",
+        "logout": "Uitloggen"
       }
     },
     "manufacturer": {
@@ -323,8 +329,7 @@
             "support": "Ondersteuning",
             "feedback": "Feedback"
           }
-        },
-        "footer": {}
+        }
       }
     },
     "shop": {

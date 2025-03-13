@@ -80,6 +80,17 @@ export const routing = defineRouting({
 
     "/dashboard": "/dashboard",
 
+    // common dashboard pages
+    "/dashboard/manufacturers/account": {
+      "nl-NL": "/dashboard/fabrikanten/account",
+    },
+    "/dashboard/manufacturers/account/security": {
+      "nl-NL": "/dashboard/fabrikanten/account/beveiliging",
+    },
+    "/dashboard/manufacturers/account/billing": {
+      "nl-NL": "/dashboard/fabrikanten/account/betaling",
+    },
+
     "/dashboard/manufacturers": {
       "nl-NL": "/dashboard/fabrikanten",
     },
