@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@vendero/_components/ui/breadcrumb";
 import { Link, usePathname } from "@vendero/_lib/i18n/routing";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Href } from "@vendero/_lib/types/link";
 
@@ -17,32 +17,29 @@ export function ManufacturerDashboardHeaderBreadcrumb() {
   const t = useTranslations("dashboard.manufacturer.pages");
   const pathname = usePathname();
 
-  const [breadcrumb, setBreadcrumb] = useState<string[]>([]);
+  // Compute breadcrumb segments from the current pathname.
+  // We split on "/" and filter out empty segments and the "manufacturers" segment.
+  const breadcrumb = useMemo(
+    () =>
+      pathname
+        .split("/")
+        .filter(Boolean)
+        .filter((segment) => segment !== "manufacturers"),
+    [pathname],
+  );
 
-  useEffect(() => {
-    const parts = pathname
-      .split("/")
-      .filter(Boolean)
-      .filter((str) => str !== "manufacturers");
-
-    setBreadcrumb(parts);
-  }, [pathname]);
-
+  // Create a function that computes the href for each breadcrumb item.
+  // We use the index from the map callback for efficiency.
   const composeHref = useCallback(
-    (item: string) => {
-      // construct the href based on the breadcrumb item
-
-      // add a slash to the start and add the manufacturer path between the dashboard and rest of the breadcrumb
-      // const href = breadcrumb.slice(0, breadcrumb.indexOf(item) + 1).join("/");
+    (index: number) => {
       const base = "/dashboard/manufacturers";
-
-      if (item === "dashboard") {
+      // The first breadcrumb (e.g. "dashboard") always links to the base.
+      if (index === 0) {
         return base as Href;
       }
-
-      const href = breadcrumb.slice(1, breadcrumb.indexOf(item) + 1).join("/");
-
-      return `${base}/${href}` as Href;
+      // For subsequent segments, join the path from the second element onward.
+      const pathSegment = breadcrumb.slice(1, index + 1).join("/");
+      return `${base}/${pathSegment}` as Href;
     },
     [breadcrumb],
   );
@@ -51,14 +48,14 @@ export function ManufacturerDashboardHeaderBreadcrumb() {
     <Breadcrumb className="hidden sm:block">
       <BreadcrumbList>
         {breadcrumb.map((item, index) => (
-          <div key={item} className="flex items-center gap-2.5">
+          <div key={`${item}-${index}`} className="flex items-center gap-2.5">
             {index > 0 && <BreadcrumbSeparator />}
             <BreadcrumbItem>
               {index === breadcrumb.length - 1 ? (
                 <BreadcrumbPage>{t(item as never)}</BreadcrumbPage>
               ) : (
                 <BreadcrumbLink asChild>
-                  <Link href={composeHref(item)}>{t(item as never)}</Link>
+                  <Link href={composeHref(index)}>{t(item as never)}</Link>
                 </BreadcrumbLink>
               )}
             </BreadcrumbItem>
