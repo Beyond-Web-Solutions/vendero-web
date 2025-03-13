@@ -308,32 +308,13 @@
       }
     },
     "manufacturer": {
-      "nav": {
-        "header": {
-          "unknown-org-name": "Onbekende organisatie",
-          "type": "Fabrikant",
-
-          "team-switcher": {
-            "title": "Organisatie",
-            "add": "Organisatie toevoegen"
-          }
-        },
-        "content": {
-          "main": {
-            "insights": "Inzichten",
-            "products": "Producten",
-            "inventory": "Voorraad",
-            "shops": "Winkels"
-          },
-          "secondary": {
-            "support": "Ondersteuning",
-            "feedback": "Feedback"
-          }
-        }
+      "pages": {
+        "dashboard": "Home",
+        "products": "Producten"
       }
     },
     "shop": {
-      "nav":  {}
+      "pages": {}
     }
   }
 }

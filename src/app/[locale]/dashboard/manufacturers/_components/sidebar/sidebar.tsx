@@ -4,11 +4,8 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@vendero/_components/ui/sidebar";
-import { FactoryIcon } from "lucide-react";
+import { ManufacturerDashboardSidebarHeaderTeamSwitcherTrigger } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/team-switcher/trigger/trigger.base";
 
 export function ManufacturerDashboardSidebar(
   props: ComponentProps<typeof Sidebar>,
@@ -19,21 +16,7 @@ export function ManufacturerDashboardSidebar(
       {...props}
     >
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <FactoryIcon className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <ManufacturerDashboardSidebarHeaderTeamSwitcherTrigger />
       </SidebarHeader>
       <SidebarContent>
         {/*<NavMain items={data.navMain} />
