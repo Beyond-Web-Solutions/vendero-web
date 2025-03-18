@@ -5,7 +5,8 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "@vendero/_components/ui/sidebar";
-import { ManufacturerDashboardSidebarHeaderTeamSwitcherTrigger } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/team-switcher/trigger/trigger.base";
+import { ManufacturerDashboardSidebarHeaderTeamSwitcherTrigger } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/header/team-switcher/trigger/base";
+import { ManufacturerDashboardSidebarFooterAccountMenu } from "@vendero/app/[locale]/dashboard/manufacturers/_components/sidebar/footer/account-menu/menu/trigger";
 
 export function ManufacturerDashboardSidebar(
   props: ComponentProps<typeof Sidebar>,
@@ -23,7 +24,9 @@ export function ManufacturerDashboardSidebar(
         <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />*/}
       </SidebarContent>
-      <SidebarFooter>{/*<NavUser user={data.user} />*/}</SidebarFooter>
+      <SidebarFooter>
+        <ManufacturerDashboardSidebarFooterAccountMenu />
+      </SidebarFooter>
     </Sidebar>
   );
 }

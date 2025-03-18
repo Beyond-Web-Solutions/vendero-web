@@ -58,3 +58,38 @@ BEGIN
     RETURN sub;
 END;
 $$;
+
+create or replace function public.get_invoices() RETURNS setof stripe.invoices
+    LANGUAGE plpgsql
+    security definer
+    set
+        search_path = '' as
+$$
+DECLARE
+    member_id uuid;
+    org_id    uuid;
+    cust_id   text;
+BEGIN
+    -- Retrieve the organization ID from the JWT's user_metadata and cast to uuid
+    SELECT (auth.jwt() -> 'user_metadata' ->> 'organization_member_id')::uuid
+    INTO member_id;
+
+    -- Get the organization_id from the organizations_members table
+    SELECT organization_id
+    INTO org_id
+    FROM public.organization_members
+    WHERE id = member_id;
+
+    -- Get the corresponding customer_id from the organizations table
+    SELECT customer_id
+    INTO cust_id
+    FROM public.organizations
+    WHERE id = org_id;
+
+    -- Get the invoices associated with the customer_id
+    RETURN QUERY
+        SELECT i.*
+        FROM stripe.invoices i
+        WHERE i.customer = cust_id;
+END;
+$$;

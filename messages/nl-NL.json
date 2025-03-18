@@ -8,7 +8,8 @@
         "error-creating-organization": "Er is een fout opgetreden bij het maken van de organisatie",
         "error-creating-organization-member": "Er is een fout opgetreden bij het maken van de organisatie lid",
         "no-checkout-url": "Geen afreken-URL gevonden",
-        "no-customer-id": "Geen klant-ID gevonden"
+        "no-customer-id": "Geen klant-ID gevonden",
+        "error-updating-profile": "Er is een fout opgetreden bij het bijwerken van het profiel"
       },
       "client": {},
       "validation": {
@@ -18,7 +19,8 @@
         "required": "Dit veld is verplicht",
         "otp-must-be-6-characters": "Eenmalig wachtwoord moet 6 tekens lang zijn",
         "company-name-too-short": "Bedrijfsnaam mag niet leeg zijn",
-        "invalid-company-type": "Ongeldig bedrijfstype"
+        "invalid-company-type": "Ongeldig bedrijfstype",
+        "name-too-short": "Naam mag niet leeg zijn"
       },
       "auth": {
         "unknown": "Er is een fout opgetreden. Probeer het later opnieuw.",
@@ -296,21 +298,91 @@
   },
   "dashboard": {
     "common": {
-      "profile": {
-        "unknown-name": "Onbekende naam",
-        "unknown-email": "Onbekend e-mailadres"
+      "unknown-organization-name": "Onbekende organisatie",
+      "unknown-user-name": "Onbekende naam",
+      "types": {
+        "shop": "Winkel",
+        "manufacturer": "Fabrikant"
       },
-      "footer": {
-        "account": "Account",
-        "billing": "Facturatie",
+      "account-menu": {
+        "settings": "Accountinstellingen",
         "security": "Beveiliging",
-        "logout": "Uitloggen"
+        "billing": "Abonnement",
+        "sign-out": "Uitloggen"
+      },
+      "account": {
+        "settings": {
+          "title": "Accountinstellingen",
+          "profile": {
+            "title": "Profiel",
+            "description": "Deze gegevens kunnen worden bekeken door andere gebruikers in de organisatie.",
+            "form": {
+              "first_name": {
+                "label": "Voornaam"
+              },
+              "last_name": {
+                "label": "Achternaam"
+              },
+              "submit": "Opslaan"
+            }
+          }
+        },
+        "security": {
+          "title": "Beveiliging",
+          "password": {
+            "title": "Wachtwoord wijzigen",
+            "description": "Zorg ervoor dat je account veilig is door regelmatig je wachtwoord te wijzigen.",
+            "form": {
+              "password": {
+                "label": "Nieuw wachtwoord",
+                "placeholder": "********"
+              },
+              "confirm": {
+                "label": "Bevestig wachtwoord",
+                "placeholder": "********"
+              },
+              "submit": "Opslaan"
+            }
+          },
+          "two-factor": {
+            "title": "Tweestapsverificatie",
+            "description": "Voeg een extra beveiligingslaag toe aan je account door tweestapsverificatie in te schakelen."
+          }
+        },
+        "billing": {
+          "title": "Abonnement",
+          "manage": {},
+          "invoices": {
+            "title": "Facturen",
+            "description": "Bekijk en download je facturen.",
+            "table": {
+              "number": "Nummer",
+              "period_start": "Van",
+              "period_end": "Tot",
+              "status":{
+                "title": "Status",
+                "variants": {
+                  "draft": "Concept",
+                  "open": "Open",
+                  "paid": "Betaald",
+                  "uncollectible": "Oninbaar",
+                  "void": "Geannuleerd"
+                }
+              },
+              "total": "Totaal",
+              "invoice": "Factuur"
+            }
+          }
+        }
       }
     },
     "manufacturer": {
       "pages": {
         "dashboard": "Home",
-        "products": "Producten"
+        "products": "Producten",
+        "account": "Accountinstellingen",
+        "security": "Beveiliging",
+        "billing": "Abonnement"
       }
     },
     "shop": {

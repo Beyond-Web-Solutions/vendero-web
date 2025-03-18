@@ -24,24 +24,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  switch (event.type) {
-    case "customer.subscription.created":
-    case "customer.subscription.updated":
-    case "customer.subscription.deleted":
-    case "customer.subscription.paused":
-    case "customer.subscription.resumed":
-    case "customer.subscription.trial_will_end":
-    case "customer.subscription.pending_update_applied":
-    case "customer.subscription.pending_update_expired":
-      const subscription = event.data.object as Stripe.Subscription;
-      revalidateTag(`subscription:${subscription.customer}`);
+  if (
+    event.type.includes("customer.subscription") ||
+    event.type.includes("invoice")
+  ) {
+    const subscription = event.data.object as Stripe.Subscription;
+    revalidateTag(`subscription:${subscription.customer}`);
 
-      console.log(
-        `revalidate cache tag: \`subscription:${subscription.customer}\``,
-      );
-      break;
-    default:
-      console.log(`Unhandled event type ${event.type}`);
+    console.log(
+      `revalidate cache tag: \`subscription:${subscription.customer}\``,
+    );
   }
 
   return NextResponse.json({ received: true });

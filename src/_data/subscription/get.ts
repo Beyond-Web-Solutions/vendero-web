@@ -18,7 +18,7 @@ export async function getUserOrganizationSubscription() {
     async () => {
       const { data } = await supabase.rpc("get_subscription");
 
-      return data;
+      return data as Database["stripe"]["Tables"]["subscriptions"]["Row"];
     },
     [organization.id],
     { tags: [`subscription:${organization.customer_id}`] },
@@ -39,7 +39,7 @@ export async function getCachedSubscriptionForMiddleware(
     async () => {
       const { data } = await supabase.rpc("get_subscription");
 
-      return data;
+      return data as Database["stripe"]["Tables"]["subscriptions"]["Row"];
     },
     [organization.id],
     { tags: [`subscription:${organization.customer_id}`] },

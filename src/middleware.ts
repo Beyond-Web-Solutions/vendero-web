@@ -9,6 +9,7 @@ import {
   isOnboardingBillingRoute,
   isOnboardingOrganizationRoute,
 } from "@vendero/_lib/utils/routing/onboarding";
+import { isDashboardRoute } from "@vendero/_lib/utils/routing/dashboard";
 
 const handleI18nRouting = createMiddleware(routing);
 
@@ -61,13 +62,12 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // TODO: maybe cache this request so it's not run on every request
-  const { data: subscription } = await supabase.rpc("get_subscription");
-
-  // if the user is on an onboarding billing route and has a subscription, redirect to the dashboard
-  if (isOnboardingBillingRoute(request.nextUrl, locale) && !!subscription?.id) {
+  if (!organizationId && isDashboardRoute(request.nextUrl, locale)) {
     const url = request.nextUrl;
-    url.pathname = getPathname({ href: "/dashboard", locale });
+    url.pathname = getPathname({
+      href: "/auth/onboarding/organization",
+      locale,
+    });
 
     return NextResponse.redirect(url);
   }

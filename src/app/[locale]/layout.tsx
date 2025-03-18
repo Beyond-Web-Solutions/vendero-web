@@ -2,8 +2,7 @@ import { cn } from "@vendero/_lib/utils/ui/cn";
 import { Analytics } from "@vercel/analytics/next";
 import { LayoutProps } from "@vendero/_lib/types/props";
 import { Inter } from "next/font/google";
-import { routing } from "@vendero/_lib/i18n/routing";
-import { notFound } from "next/navigation";
+import { redirect, routing } from "@vendero/_lib/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import "../globals.css";
@@ -19,7 +18,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 
   // Ensure that the incoming `locale` is valid
   if (!hasLocale(routing.locales, locale)) {
-    notFound();
+    redirect({ href: "/", locale: routing.defaultLocale });
   }
 
   // Enable static rendering

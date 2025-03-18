@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:types": "npx supabase gen types typescript --local --schema public --schema stripe > ./src/_lib/types/supabase.ts"
+    "gen:types": "npx supabase gen types typescript --local --schema stripe --schema public > ./src/_lib/types/supabase.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
@@ -27,7 +27,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.476.0",
-    "next": "15.2.0",
+    "next": "15.2.3",
     "next-intl": "4.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

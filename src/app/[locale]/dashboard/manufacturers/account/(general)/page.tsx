@@ -1,7 +1,9 @@
 import { PageProps } from "@vendero/_lib/types/props";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
-import { DashboardHeader } from "@vendero/app/[locale]/dashboard/_components/header";
+import { DashboardHeader } from "@vendero/app/[locale]/dashboard/_components/page-header/base";
+import { useTranslations } from "next-intl";
+import { DashboardAccountSettingsProfileContainer } from "@vendero/app/[locale]/dashboard/_components/account/settings/profile/container";
 
 export default function ManufacturerDashboardAccountPage({
   params,
@@ -11,14 +13,14 @@ export default function ManufacturerDashboardAccountPage({
   // Enable static rendering
   setRequestLocale(locale);
 
+  const t = useTranslations("dashboard.common.account.settings");
+
   return (
     <>
-      <DashboardHeader
-        items={[
-          { title: "Dashboard", href: "/dashboard/manufacturers" },
-          { href: "/dashboard/manufacturers/account", title: "Account" },
-        ]}
-      />
+      <DashboardHeader label={t("title")} />
+      <div className="grid gap-6 py-6">
+        <DashboardAccountSettingsProfileContainer />
+      </div>
     </>
   );
 }
