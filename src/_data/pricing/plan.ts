@@ -23,7 +23,6 @@ export async function getPlan() {
       if (!subscription) return null;
 
       const attrs = subscription.attrs as unknown as Attrs;
-      console.log(attrs);
 
       if (organization.type === "shop") {
         const { data: plans } = await supabase.rpc("get_shop_pricing_plans");

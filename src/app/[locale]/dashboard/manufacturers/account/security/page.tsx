@@ -4,7 +4,6 @@ import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DashboardHeader } from "@vendero/app/[locale]/dashboard/_components/page-header/base";
 import { DashboardAccountSettingsSecurityPassword } from "@vendero/app/[locale]/dashboard/_components/account/security/password/container";
-import { DashboardAccountSettingsSecurityTwoFactor } from "@vendero/app/[locale]/dashboard/_components/account/security/two-factor/container";
 
 export default function ManufacturerDashboardAccountSecurityPage({
   params,
@@ -21,7 +20,7 @@ export default function ManufacturerDashboardAccountSecurityPage({
       <DashboardHeader label={t("title")} />
       <div className="grid gap-8 py-10">
         <DashboardAccountSettingsSecurityPassword />
-        <DashboardAccountSettingsSecurityTwoFactor />
+        {/*<DashboardAccountSettingsSecurityTwoFactor />*/}
       </div>
     </>
   );
