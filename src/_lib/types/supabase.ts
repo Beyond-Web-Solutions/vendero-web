@@ -118,7 +118,7 @@ export type Database = {
       };
       get_invoices: {
         Args: Record<PropertyKey, never>;
-        Returns: Array<Database["stripe"]["Tables"]["invoices"]["Row"]>;
+        Returns: unknown;
       };
       get_manufacturer_pricing_plans: {
         Args: Record<PropertyKey, never>;
