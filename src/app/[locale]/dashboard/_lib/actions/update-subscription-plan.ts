@@ -10,7 +10,7 @@ import { handleServerActionError } from "@vendero/_lib/utils/errors/server/handl
 import { getUserOrganizationSubscription } from "@vendero/_data/subscription/get";
 
 export async function updateSubscriptionPlan(): ServerActionResponse<
-  {},
+  object,
   string
 > {
   const [locale, organization, subscription] = await Promise.all([

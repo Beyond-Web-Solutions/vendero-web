@@ -9,7 +9,10 @@ import { getPathname } from "@vendero/_lib/i18n/routing";
 import { handleServerActionError } from "@vendero/_lib/utils/errors/server/handle-server-action-error";
 import { getUserOrganizationSubscription } from "@vendero/_data/subscription/get";
 
-export async function cancelSubscription(): ServerActionResponse<{}, string> {
+export async function cancelSubscription(): ServerActionResponse<
+  object,
+  string
+> {
   const [locale, organization, subscription] = await Promise.all([
     getLocale(),
     getUserOrganization(),

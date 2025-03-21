@@ -8,7 +8,10 @@ import { getLocale } from "next-intl/server";
 import { getPathname } from "@vendero/_lib/i18n/routing";
 import { handleServerActionError } from "@vendero/_lib/utils/errors/server/handle-server-action-error";
 
-export async function updatePaymentMethod(): ServerActionResponse<{}, string> {
+export async function updatePaymentMethod(): ServerActionResponse<
+  object,
+  string
+> {
   const [organization, locale] = await Promise.all([
     getUserOrganization(),
     getLocale(),
