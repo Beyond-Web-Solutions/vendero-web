@@ -17,10 +17,7 @@ export async function middleware(request: NextRequest) {
   const i18nResponse = handleI18nRouting(request);
 
   // A `response` can now be passed here
-  const { user, response, supabase } = await supabaseMiddleware(
-    request,
-    i18nResponse,
-  );
+  const { user, response } = await supabaseMiddleware(request, i18nResponse);
 
   const locale = await getLocale();
 

@@ -9,7 +9,8 @@
         "error-creating-organization-member": "Er is een fout opgetreden bij het maken van de organisatie lid",
         "no-checkout-url": "Geen afreken-URL gevonden",
         "no-customer-id": "Geen klant-ID gevonden",
-        "error-updating-profile": "Er is een fout opgetreden bij het bijwerken van het profiel"
+        "error-updating-profile": "Er is een fout opgetreden bij het bijwerken van het profiel",
+        "no-subscription": "Geen abonnement gevonden"
       },
       "client": {},
       "validation": {
@@ -351,7 +352,20 @@
         },
         "billing": {
           "title": "Abonnement",
-          "manage": {},
+          "manage": {
+            "title": "Abonnement",
+            "description": "Beheer je abonnement en wijzig je facturatiegegevens.",
+            "header": {
+              "plan": "{plan} abonnement",
+              "unknown-plan": "Onbekend abonnement",
+              "current-billing-cycle": "Huidige factureringscyclus : {start} - {end}",
+              "update-payment-method": "Betalingsmethode bijwerken"
+            },
+            "actions": {
+              "cancel": "Abonnement annuleren",
+              "update": "Abonnement wijzigen"
+            }
+          },
           "invoices": {
             "title": "Facturen",
             "description": "Bekijk en download je facturen.",
@@ -359,7 +373,7 @@
               "number": "Nummer",
               "period_start": "Van",
               "period_end": "Tot",
-              "status":{
+              "status": {
                 "title": "Status",
                 "variants": {
                   "draft": "Concept",

@@ -9,7 +9,7 @@ export function DashboardAccountSettingsSecurityPasswordFallback() {
         <FormFieldSkeleton />
         <FormFieldSkeleton />
       </CardContent>
-      <CardFooter className="justify-end border-t pt-6">
+      <CardFooter>
         <Skeleton className="h-9 w-[100px]" />
       </CardFooter>
     </>

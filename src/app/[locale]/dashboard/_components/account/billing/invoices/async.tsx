@@ -11,7 +11,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { formatCurrency } from "@vendero/_lib/utils/ui/currency";
 import { formatDateStringToMediumDate } from "@vendero/_lib/utils/ui/date";
 import { Button } from "@vendero/_components/ui/button";
-import { DownloadIcon } from "lucide-react";
+import { DownloadIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { Card } from "@vendero/_components/ui/card";
 import { DashboardAccountBillingInvoicesStatus } from "@vendero/app/[locale]/dashboard/_components/account/billing/invoices/badge";
@@ -66,7 +66,7 @@ export async function DashboardAccountBillingInvoicesAsync() {
                 ) : (
                   <Button size="sm" variant="outline" disabled>
                     {t("invoice")}
-                    <DownloadIcon className="ml-2 size-4" />
+                    <ExternalLinkIcon className="ml-2 size-4" />
                   </Button>
                 )}
               </TableCell>

@@ -18,7 +18,7 @@ export default function ManufacturerDashboardAccountPage({
   return (
     <>
       <DashboardHeader label={t("title")} />
-      <div className="grid gap-6 py-6">
+      <div className="grid gap-8 py-10">
         <DashboardAccountSettingsProfileContainer />
       </div>
     </>

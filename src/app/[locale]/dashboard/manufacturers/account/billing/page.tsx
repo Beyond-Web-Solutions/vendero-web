@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DashboardHeader } from "@vendero/app/[locale]/dashboard/_components/page-header/base";
 import { DashboardAccountBillingInvoices } from "@vendero/app/[locale]/dashboard/_components/account/billing/invoices/container";
+import { DashboardAccountManageBilling } from "@vendero/app/[locale]/dashboard/_components/account/billing/manage/container";
 
 export default function ManufacturerDashboardAccountBillingPage({
   params,
@@ -18,7 +19,8 @@ export default function ManufacturerDashboardAccountBillingPage({
   return (
     <>
       <DashboardHeader label={t("title")} />
-      <div className="grid gap-6 py-6">
+      <div className="grid gap-8 py-10">
+        <DashboardAccountManageBilling />
         <DashboardAccountBillingInvoices />
       </div>
     </>
