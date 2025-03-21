@@ -1,6 +1,9 @@
 import { typeToFlattenedError } from "zod";
 
-export type ServerActionResponse<Schema = {}, Response = undefined> = Promise<
+export type ServerActionResponse<
+  Schema = object,
+  Response = undefined,
+> = Promise<
   | ({
       ok: true | false;
     } & ServerActionValidationError<Schema>)
